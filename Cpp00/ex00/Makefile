@@ -6,16 +6,16 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/15 08:23:38 by yismaail          #+#    #+#              #
-#    Updated: 2023/07/15 09:11:23 by yismaail         ###   ########.fr        #
+#    Updated: 2023/07/18 04:23:47 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	megaphone
 CC			=	c++
 
-CFLAGS		=	-std=c++98
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 RM			=	rm -rf
-SRCS		=	megaphone.cpp
+SRCS		=	megaphone.cpp main.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}
