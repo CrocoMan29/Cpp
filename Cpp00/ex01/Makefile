@@ -6,7 +6,7 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 00:56:56 by yismaail          #+#    #+#              #
-#    Updated: 2023/07/18 00:57:07 by yismaail         ###   ########.fr        #
+#    Updated: 2023/07/20 16:53:12 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC			=	c++
 
 CFLAGS		=	-std=c++98
 RM			=	rm -rf
-SRCS		=	megaphone.cpp main.cpp
+SRCS		=	main.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}
