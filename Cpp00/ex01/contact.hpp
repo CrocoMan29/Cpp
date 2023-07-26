@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:31:10 by yismaail          #+#    #+#             */
-/*   Updated: 2023/07/26 15:42:46 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/07/26 23:49:10 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <iostream>
 class Contact 
 {
 	private:
