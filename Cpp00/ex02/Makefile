@@ -6,16 +6,16 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 00:56:56 by yismaail          #+#    #+#              #
-#    Updated: 2023/07/31 03:52:40 by yismaail         ###   ########.fr        #
+#    Updated: 2023/07/31 08:03:12 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	megaphone
+NAME		=	account
 CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
-SRCS		=	main.cpp contact.cpp phoneBook.cpp
+SRCS		=	test.cpp Account.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}

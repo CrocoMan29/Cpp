@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 10:05:27 by yismaail          #+#    #+#             */
-/*   Updated: 2023/07/26 19:32:38 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/07/31 01:35:12 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,22 @@ PhoneBook::PhoneBook():contactNum(0) {}
 bool PhoneBook::isFull() const
 {
 	return contactNum == 8;
+}
+
+bool PhoneBook::isEmpty() const
+{
+	return contactNum == 0;
+}
+
+bool isDigits(std::string str) 
+{
+	int i = 0;
+    while (str[i]) {
+        if (!isdigit(str[i])) 
+            return false;
+        i++;
+    }
+    return true;
 }
 
 void PhoneBook::addContact(const Contact& newContact)
@@ -34,7 +50,7 @@ void PhoneBook::displayContacts() const
 {
 	std::cout << "Index\tFirst Name\tLast Name\tNick Name" << std::endl;
 
-	for (int i = 0; i < contactNum; ++i)
+	for (int i = 0; i < contactNum; i++)
 	{
 		std::string firstName = contacts[i].getFirstName();
 		std::string lastName = contacts[i].getLastName();
@@ -45,7 +61,7 @@ void PhoneBook::displayContacts() const
 			lastName = lastName.substr(0, 9) + ".";
 		if (nickName.length() > 10)
 			nickName = nickName.substr(0,9) + ".";
-		std::cout << i << "\t" << firstName << "\t\t" << lastName << "\t\t" << nickName << "\t";
+		std::cout << i << "\t" << firstName << "\t\t" << lastName << "\t" << nickName << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 00:57:32 by yismaail          #+#    #+#             */
-/*   Updated: 2023/07/26 23:50:22 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/07/31 03:53:46 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int main(int ac, char **av)
 {
+	(void)ac;
+	(void)av;
 	PhoneBook phoneBook;
 
 	while (true)
@@ -22,7 +24,7 @@ int main(int ac, char **av)
 		std::cout << "Enter a command (ADD, SEARCH, EXIT)." << std::endl;
 		std::string command;
 		getline(std::cin, command);
-		if (command.compare("ADD"))
+		if (command == "ADD")
 		{
 			if (!phoneBook.isFull())
 			{
@@ -37,17 +39,29 @@ int main(int ac, char **av)
 				getline(std::cin, phonenumber);
 				std::cout << "enter ur darkest secret " << std::endl;
 				getline(std::cin, darkestsecret);
+				if (!isDigits(phonenumber))
+					{
+						std::cout << "phoneNumber is invalid" << std::endl;
+						break;
+					}
 				Contact newContact(firstname, lastname, nickname, phonenumber, darkestsecret);
 				phoneBook.addContact(newContact);
 				std::cout << "add contact successefully" << std::endl;
 			}
 		}
-		else if (command.compare("SEARCH"))
+		else if (command == "SEARCH")
 		{
+			int index;
 			if (phoneBook.isFull())
 			{
 				phoneBook.displayContacts();
-				int index;
+				std::cout << "enter index of contact uu want" << std::endl;
+				std::cin >> index;
+				phoneBook.searchContact(index);
+			}
+			else if (!phoneBook.isEmpty())
+			{
+				phoneBook.displayContacts();
 				std::cout << "enter index of contact uu want" << std::endl;
 				std::cin >> index;
 				phoneBook.searchContact(index);
@@ -55,7 +69,7 @@ int main(int ac, char **av)
 			else
 				std::cout << "the phoneBook is empty" << std::endl;
 		}
-		else if (command.compare("EXIT"))
+		else if (command == "EXIT")
 		{
 			std::cout << "baaay baaaay baaaay" << std::endl;
 			break;
