@@ -6,7 +6,7 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 00:56:56 by yismaail          #+#    #+#              #
-#    Updated: 2023/07/31 08:03:12 by yismaail         ###   ########.fr        #
+#    Updated: 2023/08/01 03:09:29 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
-SRCS		=	test.cpp Account.cpp
+SRCS		=	main.cpp Account.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}

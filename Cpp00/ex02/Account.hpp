@@ -16,6 +16,8 @@
 //                               Account Class                                //
 // ************************************************************************** //
 
+#include <iostream>
+
 class Account {
 
 
@@ -36,6 +38,7 @@ public:
 	bool	makeWithdrawal( int withdrawal );
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
+	static void 	printTwoNum(int number);
 
 
 private:
