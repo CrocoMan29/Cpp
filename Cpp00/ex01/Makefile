@@ -6,11 +6,11 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 00:56:56 by yismaail          #+#    #+#              #
-#    Updated: 2023/07/31 03:52:40 by yismaail         ###   ########.fr        #
+#    Updated: 2023/08/02 04:41:18 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	megaphone
+NAME		=	phoneBook
 CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98

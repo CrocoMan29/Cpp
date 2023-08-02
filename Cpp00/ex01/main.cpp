@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 00:57:32 by yismaail          #+#    #+#             */
-/*   Updated: 2023/07/31 03:53:46 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/08/02 04:59:09 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,39 @@ int main(int ac, char **av)
 				std::string firstname, lastname, nickname, phonenumber, darkestsecret;
 				std::cout << "enter ur first name " << std::endl;
 				getline(std::cin, firstname);
-				std::cout << "enter ur last name " << std::endl;
+				if (firstname.empty())
+				{
+					std::cout << "firstname is invalid" << std::endl;
+					continue;
+				}
+				std::cout << "enter ur lastname " << std::endl;
 				getline(std::cin, lastname);
-				std::cout << "enter ur nick name " << std::endl;
+				if (firstname.empty())
+				{
+					std::cout << "lastname is invalid" << std::endl;
+					break;
+				}
+				std::cout << "enter ur nickname " << std::endl;
 				getline(std::cin, nickname);
+				if (firstname.empty())
+				{
+					std::cout << "nickname is invalid" << std::endl;
+					break;
+				}
 				std::cout << "enter ur phone number " << std::endl;
 				getline(std::cin, phonenumber);
+				if (firstname.empty() || !isDigits(phonenumber))
+				{
+					std::cout << "phoneNumber is invalid" << std::endl;
+					continue;
+				}
 				std::cout << "enter ur darkest secret " << std::endl;
 				getline(std::cin, darkestsecret);
-				if (!isDigits(phonenumber))
-					{
-						std::cout << "phoneNumber is invalid" << std::endl;
-						break;
-					}
+				if (firstname.empty())
+				{
+					std::cout << "phoneNumber is invalid" << std::endl;
+					continue;
+				}
 				Contact newContact(firstname, lastname, nickname, phonenumber, darkestsecret);
 				phoneBook.addContact(newContact);
 				std::cout << "add contact successefully" << std::endl;
