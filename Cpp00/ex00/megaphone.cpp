@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 08:19:08 by yismaail          #+#    #+#             */
-/*   Updated: 2023/07/18 10:44:37 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/08/02 23:38:16 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void	doUpper(int ac, char **av)
 			if (i != ac - 1)
 				cout << " ";
 		}
+		std::cout << "\n";
 	}
 }
