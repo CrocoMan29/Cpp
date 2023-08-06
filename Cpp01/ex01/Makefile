@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/05 03:30:08 by yismaail          #+#    #+#              #
-#    Updated: 2023/08/06 09:24:52 by yismaail         ###   ########.fr        #
+#    Created: 2023/08/06 10:04:23 by yismaail          #+#    #+#              #
+#    Updated: 2023/08/06 10:05:09 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
-SRCS		=	main.cpp randomChump.cpp newZombie.cpp Zombie.cpp
+SRCS		=	main.cpp ZombieHorde.cpp Zombie.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}

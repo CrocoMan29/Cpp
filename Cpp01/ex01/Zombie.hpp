@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 03:21:51 by yismaail          #+#    #+#             */
-/*   Updated: 2023/08/06 09:40:28 by yismaail         ###   ########.fr       */
+/*   Created: 2023/08/06 09:43:08 by yismaail          #+#    #+#             */
+/*   Updated: 2023/08/06 09:46:07 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#ifndef __ZOMBIE_H__
+#define __ZOMBIE_H__
 
-void Zombie::announce(void){
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#include <iostream>
 
-void Zombie::setName(std::string name)
+class Zombie
 {
-	this->_name = name;
-}
+	private:
+		std::string _name;
+	public:
+		Zombie(std::string name);
+		~Zombie();
+		void announce(void);
+		void setName(std::string name);
+};
 
-Zombie::Zombie(std::string name)
-{
-	setName(name);
-	std::cout << this->_name << " created" << std::endl;
-}
+Zombie *newZombie(std::string name);
+Zombie* zombieHorde( int N, std::string name );
+void	randomChump(std::string name);
 
-Zombie::~Zombie()
-{
-	std::cout << this->_name << ": is dead " << std::endl;
-}
+#endif
