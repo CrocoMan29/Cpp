@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/07 08:30:42 by yismaail          #+#    #+#              #
-#    Updated: 2023/08/09 08:43:24 by yismaail         ###   ########.fr        #
+#    Created: 2023/08/09 10:13:57 by yismaail          #+#    #+#              #
+#    Updated: 2023/08/09 11:10:27 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	main.cpp HumanA.cpp Weapon.cpp HumanB.cpp
+SRCS		=	main.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}
