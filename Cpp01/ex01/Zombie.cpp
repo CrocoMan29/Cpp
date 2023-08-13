@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 09:43:54 by yismaail          #+#    #+#             */
-/*   Updated: 2023/08/07 00:30:57 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/08/13 07:05:44 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Zombie::~Zombie()
 	std::cout << this->_name << ": is dead " << std::endl;
 }
 
-Zombie::Zombie()
+Zombie::Zombie(): _name(_name)
 {
-	std::cout << this->_name << std::endl;
+	std::cout << this->_name << " created" << std::endl;
 }
