@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 09:43:08 by yismaail          #+#    #+#             */
-/*   Updated: 2023/08/07 00:34:34 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/09/23 23:17:48 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Zombie
 		std::string _name;
 	public:
 		Zombie(std::string name);
+		Zombie(const std::string& name);
 		~Zombie();
 		Zombie();
 		void announce(void);

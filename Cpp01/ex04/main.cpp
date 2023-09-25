@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:13:38 by yismaail          #+#    #+#             */
-/*   Updated: 2023/08/13 12:16:26 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/09/25 21:07:23 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 void replaceStrFile(std::string& file, std::string& s1, std::string& s2)
 {
-	(void)s1;
-	(void)s2;
+	// (void)s1;
+	// (void)s2;
 	std::ifstream infile;
 
 	if (s1.empty())
 		return ;		
-	infile.open(file);
+	infile.open(file.c_str());
 	if (!infile.is_open())
 	{
 		std::cerr << "cannot open this file " << std::endl;

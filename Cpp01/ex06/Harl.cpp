@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 05:57:31 by yismaail          #+#    #+#             */
-/*   Updated: 2023/08/13 06:49:04 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/09/25 21:17:15 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void Harl::chooseOne(int i){
 		(this->*m_FP[3])();
 		break;
 	default:
-		std::cout << "Again, i told uu we don't do that here" << std::endl;
+		std::cout << "Again, I told uu we don't do that here." << std::endl;
 		break;
 	}
 }

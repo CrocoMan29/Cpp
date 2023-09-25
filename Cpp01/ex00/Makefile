@@ -6,12 +6,12 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/05 03:30:08 by yismaail          #+#    #+#              #
-#    Updated: 2023/08/06 09:24:52 by yismaail         ###   ########.fr        #
+#    Updated: 2023/08/14 13:51:33 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	zombie
-CC			=	c++
+CC			=	clang++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf

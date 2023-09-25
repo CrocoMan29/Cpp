@@ -6,13 +6,11 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 03:23:05 by yismaail          #+#    #+#             */
-/*   Updated: 2023/08/06 07:37:43 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/09/23 22:44:52 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ZOMBIE_H__
-#define __ZOMBIE_H__
 
 #include <iostream>
 
@@ -29,5 +27,3 @@ class Zombie
 
 Zombie *newZombie(std::string name);
 void	randomChump(std::string name);
-
-#endif
