@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 06:10:12 by yismaail          #+#    #+#             */
-/*   Updated: 2023/09/26 01:15:44 by yismaail         ###   ########.fr       */
+/*   Created: 2023/10/01 02:11:02 by yismaail          #+#    #+#             */
+/*   Updated: 2023/10/01 03:01:57 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int main (int ac, char **av){
-	// (void)ac;
-	if (ac > 1)
-	{
-		
-	Harl harl;
-	int i = harl.takeindex(av[1]);
-	harl.chooseOne(i);
-	}
+int main(){
+	Fixed a;
+Fixed b( a );
+Fixed c;
+c = b;
+std::cout << a.getRawBits() << std::endl;
+std::cout << b.getRawBits() << std::endl;
+std::cout << c.getRawBits() << std::endl;
+return 0;
 }
