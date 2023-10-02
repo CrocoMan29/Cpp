@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 02:12:22 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/02 10:19:09 by yismaail         ###   ########.fr       */
+/*   Created: 2023/10/02 10:16:32 by yismaail          #+#    #+#             */
+/*   Updated: 2023/10/02 20:40:35 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,9 @@ class Fixed {
 		~Fixed();
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
+		Fixed(const int num);
+		Fixed(const float num);
+		float toFloat( void ) const;
+		int toInt( void ) const;
+		std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 };
