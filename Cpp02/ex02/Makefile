@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/01 03:07:17 by yismaail          #+#    #+#              #
-#    Updated: 2023/10/04 13:28:27 by yismaail         ###   ########.fr        #
+#    Created: 2023/10/04 13:01:36 by yismaail          #+#    #+#              #
+#    Updated: 2023/10/04 13:28:17 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	Fixed
 CC			=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
 SRCS		=	main.cpp Fixed.cpp
 
