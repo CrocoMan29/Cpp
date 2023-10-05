@@ -6,13 +6,13 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:01:24 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/04 15:54:32 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:53:17 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed():fixed_num(0){
+Fixed:Fixed():fixed_num(0){
 }
 
 Fixed::Fixed(const Fixed& obj){
@@ -68,21 +68,21 @@ Fixed Fixed::operator-(const Fixed &obj) const
 {
 	Fixed res;
 	res.setRawBits(this->getRawBits() - obj.getRawBits());
-	return Fixed();
+	return res;
 }
 
 Fixed Fixed::operator*(const Fixed &obj) const
 {
 	Fixed res;
 	res.setRawBits((this->getRawBits() * obj.getRawBits()) >> this->frac_num);
-	return Fixed();
+	return res;
 }
 
 Fixed Fixed::operator/(const Fixed &obj) const
 {
 	Fixed res;
 	res.setRawBits((this->getRawBits() << this->frac_num) / obj.getRawBits());
-	return Fixed();
+	return res;
 }
 
 bool Fixed::operator>(const Fixed &obj) const
@@ -152,6 +152,7 @@ Fixed& Fixed::min(Fixed& a, Fixed& b){
 const Fixed &Fixed::max(const Fixed & a, const Fixed & b){
 	return (a > b ? a : b);
 }
+
 Fixed &Fixed::max(Fixed& a, Fixed& b){
 	return (a > b ? a : b);
 }
