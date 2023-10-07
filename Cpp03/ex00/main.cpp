@@ -5,21 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 02:11:02 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/06 09:12:06 by yismaail         ###   ########.fr       */
+/*   Created: 2023/10/07 19:08:11 by yismaail          #+#    #+#             */
+/*   Updated: 2023/10/07 19:30:57 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-int main()
-{
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+int main (){
+	ClapTrap clap("clap");
+	// ClapTrap clap2(clap);
+	// ClapTrap clap3;
+	// clap3 = clap2;
+	clap.attack("target");
+	clap.takeDamage(11);
+	clap.beRepaired(15);
+	clap.takeDamage(20);
+	std::cout << clap.getHitpoints() << std::endl;
+	clap.beRepaired(2);
+	
+	// clap2.attack("target");
+	// clap3.attack("target");
+	return (0);
 }

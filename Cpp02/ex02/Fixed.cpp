@@ -6,63 +6,64 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:01:24 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/05 13:53:17 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/07 17:50:58 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed:Fixed():fixed_num(0){
+Fixed::Fixed() : fixed_num(0)
+{
 }
 
-Fixed::Fixed(const Fixed& obj){
+Fixed::Fixed(const Fixed &obj)
+{
 	*this = obj;
 }
 
-Fixed &Fixed::operator=(const Fixed& obj){
+Fixed &Fixed::operator=(const Fixed &obj)
+{
 	this->fixed_num = obj.getRawBits();
-	return(*this);
+	return (*this);
 }
 
-Fixed::~Fixed(){}
+Fixed::~Fixed() {}
 
-int Fixed::getRawBits(void) const{
+int Fixed::getRawBits(void) const
+{
 	return (this->fixed_num);
 }
 
-void Fixed::setRawBits(int const raw){
+void Fixed::setRawBits(int const raw)
+{
 	this->fixed_num = raw;
 }
 
-Fixed::Fixed(const int num){
+Fixed::Fixed(const int num)
+{
 	this->fixed_num = num << this->frac_num;
 }
 
-Fixed::Fixed(const float num){
+Fixed::Fixed(const float num)
+{
 	this->fixed_num = (int)(num * (1 << this->frac_num) + (num >= 0 ? 0.5 : -0.5));
 }
 
-float Fixed::toFloat(void) const{
+float Fixed::toFloat(void) const
+{
 	float num = (float)this->fixed_num / (float)(1 << this->frac_num);
 	return num;
 }
 
-int Fixed::toInt() const {
-	int num = this->fixed_num >> this->frac_num;
-    return num;
-}
-
-std::ostream &operator<<(std::ostream &os, const Fixed &obj){
-	os << obj.toFloat();
-	return os;
-}
-
-Fixed Fixed::operator+(const Fixed &obj) const
+int Fixed::toInt() const
 {
-	Fixed res;
-	res.setRawBits(this->getRawBits() + obj.getRawBits());
-	return res;
+	int num = this->fixed_num >> this->frac_num;
+	return num;
 }
+
+std::ostream &operator<<(std::ostream &os, const Fixed &obj)
+{
+	os << obj.toFloat();// TODO: insert return statement here
 
 Fixed Fixed::operator-(const Fixed &obj) const
 {
@@ -81,6 +82,8 @@ Fixed Fixed::operator*(const Fixed &obj) const
 Fixed Fixed::operator/(const Fixed &obj) const
 {
 	Fixed res;
+	if (!obj.getRawBits())
+		return 0;
 	res.setRawBits((this->getRawBits() << this->frac_num) / obj.getRawBits());
 	return res;
 }
@@ -141,18 +144,22 @@ Fixed Fixed::operator--(int)
 	return tmp;
 }
 
-const Fixed &Fixed::min(const Fixed &a, const Fixed &b){
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
+{
 	return (a < b ? a : b);
 }
 
-Fixed& Fixed::min(Fixed& a, Fixed& b){
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
 	return (a < b ? a : b);
 }
 
-const Fixed &Fixed::max(const Fixed & a, const Fixed & b){
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
+{
 	return (a > b ? a : b);
 }
 
-Fixed &Fixed::max(Fixed& a, Fixed& b){
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
 	return (a > b ? a : b);
 }
