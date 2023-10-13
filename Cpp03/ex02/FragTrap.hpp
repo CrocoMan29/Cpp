@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 20:05:52 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/10 20:02:11 by yismaail         ###   ########.fr       */
+/*   Created: 2023/10/10 20:16:19 by yismaail          #+#    #+#             */
+/*   Updated: 2023/10/10 20:31:31 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap:public ClapTrap
-{
+class FragTrap:public ClapTrap{
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap &obj);
-		ScavTrap	&operator=(ScavTrap &obj);
-		~ScavTrap();
-		void guardGate();
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(FragTrap &obj);
+		FragTrap	&operator=(FragTrap &obj);
+		~FragTrap();
+		void highFivesGuys(void);
 		void attack(std::string const &target);
 		void takedamage(unsigned int amount);
 		void berepaired(unsigned int amount);

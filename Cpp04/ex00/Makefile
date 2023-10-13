@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/07 20:05:44 by yismaail          #+#    #+#              #
-#    Updated: 2023/10/10 20:21:37 by yismaail         ###   ########.fr        #
+#    Created: 2023/10/12 01:28:12 by yismaail          #+#    #+#              #
+#    Updated: 2023/10/12 01:28:55 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}
