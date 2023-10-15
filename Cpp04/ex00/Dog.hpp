@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 01:28:18 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/12 21:17:06 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/13 19:25:36 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,4 @@ class Dog:public Animal{
 		Dog &operator=(Dog const &obj);
 		~Dog();
 		void makeSound() const;
-}
+};

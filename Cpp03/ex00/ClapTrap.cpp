@@ -6,13 +6,13 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 17:33:46 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/10 19:47:17 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/14 21:19:40 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(){}
+ClapTrap::ClapTrap():_name("me"), _hitpoints(0), _energy_points(0), _attack_damage(0){}
 
 ClapTrap::ClapTrap(std::string name)
 {
@@ -41,7 +41,10 @@ ClapTrap::~ClapTrap(){
 
 void ClapTrap::attack(std::string const &target){
 	this->_hitpoints -= this->_attack_damage;
-	this->_energy_points -= 1;
+	if (this->_energy_points > 0)
+		this->_energy_points -= 1;
+	else
+		std::cout << "ClapTrap " << this->_name << " is out of energy" << std::endl;
 	if (this->_hitpoints <= 0)
 		std::cout << "ClapTrap " << this->_name << " died" << std::endl;
 	else

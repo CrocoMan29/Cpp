@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 01:28:32 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/12 21:07:15 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/13 19:37:34 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal
 		Animal();
 		Animal(Animal const & src);
 		Animal & operator=(Animal const & obj);
-		~Animal();
+		virtual ~Animal();
 		std::string getType() const;
 		void setType(std::string type);
 		virtual void makeSound() const;

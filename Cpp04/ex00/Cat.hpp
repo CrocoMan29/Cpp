@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 01:28:25 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/12 21:07:56 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/15 05:34:56 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 #include "Animal.hpp"
 
-class Cat: public Animal{
+class Cat:virtual public Animal{
 	public:
 		Cat();
 		Cat(Cat const &src);
 		Cat &operator=(Cat const &obj);
 		~Cat();
 		void	makeSound() const;
-}
+};

@@ -6,16 +6,16 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/12 01:28:12 by yismaail          #+#    #+#              #
-#    Updated: 2023/10/12 01:28:55 by yismaail         ###   ########.fr        #
+#    Updated: 2023/10/14 21:24:27 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ClapTrap
+NAME		=	Animal
 CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS		=	main.cpp animal.cpp dog.cpp cat.cpp 
 
 
 OBJS		= ${SRCS:.cpp=.opp}

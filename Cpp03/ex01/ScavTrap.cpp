@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 20:05:48 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/10 20:05:20 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/14 21:19:57 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,14 @@ void ScavTrap::guardGate()
 void ScavTrap::attack(std::string const &target)
 {
 	this->_hitpoints -= this->_attack_damage;
-	this->_energy_points -= 1;
-	if (this->_hitpoints <= 0)
-		std::cout << "ScavTrap " << this->_name << " died" << std::endl;
+	if (this->_energy_points > 0)
+		this->_energy_points -= 1;
 	else
-		std::cout << "ScavTrap " << this->_name << " attack " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " is out of energy" << std::endl;
+	if (this->_hitpoints <= 0)
+		std::cout << "ClapTrap " << this->_name << " died" << std::endl;
+	else
+		std::cout << "ClapTrap " << this->_name << " attack " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::takedamage(unsigned int amount)

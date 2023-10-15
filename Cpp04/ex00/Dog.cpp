@@ -13,7 +13,7 @@
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog():Animal()
 {
 	std::cout << "Constructor of Dog is called" << std::endl;
 }
