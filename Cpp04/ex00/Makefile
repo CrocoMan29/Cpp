@@ -6,16 +6,16 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/12 01:28:12 by yismaail          #+#    #+#              #
-#    Updated: 2023/10/14 21:24:27 by yismaail         ###   ########.fr        #
+#    Updated: 2023/10/16 02:27:27 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	Animal
 CC			=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	main.cpp animal.cpp dog.cpp cat.cpp 
+SRCS		=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}
