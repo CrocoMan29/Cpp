@@ -1,8 +1,7 @@
-#include "Animal.hpp"
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,41 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "colors.hpp"
 
-Animal::Animal():_type("tahaja")
+AAnimal::AAnimal():_type("tahaja")
 {
-	std::cout << "Animal default constructor called" << RESET << std::endl;
+	std::cout << RED << "AAnimal default constructor called" << RESET << std::endl;
 }
 
-Animal::Animal(Animal const & src)
+AAnimal::AAnimal(AAnimal const & src)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << RED << "AAnimal copy constructor called" << RESET << std::endl;
 	*this = src;
 }
 
-Animal &Animal::operator=(Animal const &obj)
+AAnimal &AAnimal::operator=(AAnimal const &obj)
 {
-	this->_type = obj._type;
+	if (this != &obj)
+		this->_type = obj._type;
 	return (*this);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal is destroyed" << std::endl;
+	std::cout << RED << "AAnimal is destroyed" << RESET << std::endl;
 }
 
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
 	return (this->_type);
 }
 
-void Animal::setType(std::string type)
+void AAnimal::setType(std::string type)
 {
 	this->_type = type;
 }
 
-void Animal::makeSound() const
+void AAnimal::makeSound() const
 {
-	std::cout << "I don't have sound to make " << std::endl;
+	std::cout << RED << "I don't have sound to make " << RESET << std::endl;
 }

@@ -12,15 +12,16 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "colors.hpp"
 
 Animal::Animal():_type("tahaja")
 {
-	std::cout << "Animal default constructor called" << RESET << std::endl;
+	std::cout << RED << "Animal default constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(Animal const & src)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << RED << "Animal copy constructor called" << RESET << std::endl;
 	*this = src;
 }
 
@@ -32,7 +33,7 @@ Animal &Animal::operator=(Animal const &obj)
 
 Animal::~Animal()
 {
-	std::cout << "Animal is destroyed" << std::endl;
+	std::cout << RED << "Animal is destroyed" << RESET << std::endl;
 }
 
 std::string Animal::getType() const
@@ -47,5 +48,5 @@ void Animal::setType(std::string type)
 
 void Animal::makeSound() const
 {
-	std::cout << "I don't have sound to make " << std::endl;
+	std::cout << RED << "I don't have sound to make " << RESET << std::endl;
 }
