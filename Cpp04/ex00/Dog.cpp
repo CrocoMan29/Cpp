@@ -15,7 +15,8 @@
 
 Dog::Dog():Animal()
 {
-	std::cout << "Constructor of Dog is called" << std::endl;
+	this->_type = "Dog";
+	std::cout << "Constructor of " << this->_type << " is called" << std::endl;
 }
 
 Dog::Dog(Dog const &obj)
@@ -37,5 +38,5 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-	std::cout << "Meow Meow meow ^_^" << std::endl;
+	std::cout << "haw haw haw ...." << std::endl;
 }

@@ -21,7 +21,7 @@ Dog::Dog():Animal()
 	std::cout << BLUE << "Constructor of Dog is called" << RESET << std::endl;
 }
 
-Dog::Dog(Dog const &obj)
+Dog::Dog(Dog const &obj):Animal(obj)
 {
 	this->_type = obj._type;
 	this->brain = new Brain(*obj.brain);

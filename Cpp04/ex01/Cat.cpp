@@ -31,8 +31,9 @@ Cat &Cat::operator=(Cat const &obj)
 {
 	if (this != &obj)
 	{
-		this->_type = obj._type;
+		
 		this->brain = new Brain(*obj.brain);
+		this->_type = obj._type;
 	}
 	return (*this);
 }

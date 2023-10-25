@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 21:24:19 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/21 06:12:25 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:41:46 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-int main (){
+int main2 (){
  std::cout << "--------------Subject example-----------------" << std::endl;
 
     const AAnimal *j = new Dog();
@@ -64,4 +64,10 @@ int main (){
     delete catTwo; // should not create a leak
 
     return 0;
+}
+
+int main(){
+    main2();
+    system("leaks Animal");
+    return (0);
 }

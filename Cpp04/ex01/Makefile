@@ -6,14 +6,14 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/12 01:28:12 by yismaail          #+#    #+#              #
-#    Updated: 2023/10/21 05:40:50 by yismaail         ###   ########.fr        #
+#    Updated: 2023/10/25 06:19:19 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	Animal
-CC			=	c++
+CPP			=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
 SRCS		=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
@@ -23,7 +23,7 @@ OBJS		= ${SRCS:.cpp=.opp}
 all			:	$(NAME)
 
 $(NAME)		: $(SRCS)
-			$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+			$(CPP) $(CPPFLAGS) $(SRCS) -o $(NAME)
 			
 clean		:
 			$(RM) $(OBJS)

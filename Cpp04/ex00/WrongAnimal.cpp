@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 01:47:05 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/16 01:53:41 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/25 06:16:35 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ void WrongAnimal::setType(std::string type)
 
 void WrongAnimal::makeSound() const
 {
-    std::cout << "I don't have sound to make" << std::endl;
+    std::cout << "Wrong Animal no sounds" << std::endl;
 }

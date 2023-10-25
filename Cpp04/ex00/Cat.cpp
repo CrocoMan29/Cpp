@@ -15,12 +15,13 @@
 
 Cat::Cat():Animal()
 {
-	std::cout << "cat controctor called" << std::endl;
+	this->_type = "Cat";
+	std::cout << this->_type << " Contructor called" << std::endl;
 }
 
 Cat::Cat(Cat const &src):Animal(src)
 {
-	std::cout << "Copy constroctor of cat is called " << std::endl;
+	std::cout << "Copy constroctor of" << this->_type << "is called " << std::endl;
 	*this = src;
 }
 
@@ -37,5 +38,5 @@ Cat::~Cat()
 
 void Cat::makeSound() const
 {
-	std::cout << "haw haw haw !!!!!!!!" << std::endl;
+	std::cout << "meiow miwoo...." << std::endl;
 }

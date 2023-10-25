@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 21:24:19 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/21 01:22:33 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/25 06:15:25 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
 delete meta;
+delete j;
+delete i;
 WrongAnimal *wrong = new WrongCat();
 wrong->makeSound();
 delete wrong;

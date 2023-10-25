@@ -15,7 +15,7 @@
 
 Animal::Animal():_type("tahaja")
 {
-	std::cout << "Animal default constructor called" << RESET << std::endl;
+	std::cout << "Animal default constructor called" << std::endl;
 }
 
 Animal::Animal(Animal const & src)
