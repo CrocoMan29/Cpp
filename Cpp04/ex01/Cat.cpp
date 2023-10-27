@@ -23,7 +23,8 @@ Cat::Cat():Animal()
 
 Cat::Cat(Cat const &src):Animal(src)
 {
-	*this = src;
+	this->_type = src._type;
+	this->brain = new Brain(*src.brain);
 	std::cout << YELLOW << "copy constructor of cat is called" << RESET << std::endl;
 }
 
@@ -31,8 +32,7 @@ Cat &Cat::operator=(Cat const &obj)
 {
 	if (this != &obj)
 	{
-		
-		this->brain = new Brain(*obj.brain);
+		*this->brain = *obj.brain;
 		this->_type = obj._type;
 	}
 	return (*this);

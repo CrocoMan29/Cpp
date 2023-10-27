@@ -32,8 +32,8 @@ Dog &Dog::operator=(Dog const &obj)
 {
 	if (this != &obj)
 	{
+		*this->brain = *obj.brain;
 		this->_type = obj._type;
-		this->brain = new Brain(*obj.brain);
 	}
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 21:24:19 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/25 22:31:15 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/27 00:38:00 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ int main2 (){
 
 int main (){
     main2();
-    // system("leaks Animal");
+    system("leaks Animal");
     return (0);
 }

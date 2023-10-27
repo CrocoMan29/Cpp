@@ -6,7 +6,7 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 05:17:02 by yismaail          #+#    #+#             */
-/*   Updated: 2023/10/25 03:23:58 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/10/27 00:52:04 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Character::Character(Character &rfh)
     while (i < 4)
     {
         this->_inventory[i] = NULL;
-        if (this->_inventory[i])
+        if (rfh._inventory[i])
             this->_inventory[i] = rfh._inventory[i]->clone();
         i++;
     }
@@ -72,12 +72,7 @@ Character::~Character()
     for (int i = 0; i < 4; i++)
     {
         if (this->_inventory[i])
-            delete this->_inventory[i];
-        for (int j = i+1; j< 4; j++)
-        {
-            if (this->_inventory[i] == this->_inventory[j])
-                this->_inventory[j] = NULL;
-        }
+            this->_inventory[i] = NULL;
     }
 }
 
