@@ -1,36 +1,36 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Maaakefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yismaaaaaail <yismaaaaaail@student.42.fr>          +#+  +:+       +#+         #
+#    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Creaaated: 2023/08/09 10:13:57 by yismaaaaaail          #+#    #+#              #
-#    Updaaated: 2023/08/09 11:10:27 by yismaaaaaail         ###   ########.fr        #
+#    Created: 2023/11/10 17:50:30 by yismaail          #+#    #+#              #
+#    Updated: 2023/11/10 17:52:19 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	maaain
-CC			=	c++
+NAME		=	Bereauctrat
+CPP			=	c++
 
-CFLAGS		=	-Waaall -Wextraaa -Werror -std=c++98 #-fsaaanitize=aaaddress -g3
+CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	maaain.cpp
+SRCS		=	main.cpp 
 
 
 OBJS		= ${SRCS:.cpp=.opp}
 
-aaall			:	$(NAME)
+all			:	$(NAME)
 
 $(NAME)		: $(SRCS)
-			$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+			$(CPP) $(CPPFLAGS) $(SRCS) -o $(NAME)
 			
-cleaaan		:
+clean		:
 			$(RM) $(OBJS)
 
-fcleaaan		: cleaaan
+fclean		: clean
 			$(RM) $(NAME)
 
-re			: fcleaaan aaall
+re			: fclean all
 
-.PHONY: aaall cleaaan fcleaaan re
+.PHONY: all clean fclean re

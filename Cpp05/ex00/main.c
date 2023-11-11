@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 01:28:25 by yismaail          #+#    #+#             */
-/*   Updated: 2023/11/07 02:15:10 by yismaail         ###   ########.fr       */
+/*   Created: 2023/11/10 17:54:19 by yismaail          #+#    #+#             */
+/*   Updated: 2023/11/10 21:42:07 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Bureaucrat.hpp"
 
-#include "Animal.hpp"
+int main ()
+{
 
-class Cat:public Animal{
-	public:
-		Cat();
-		Cat(Cat const &src);
-		Cat &operator=(Cat const &obj);
-		~Cat();
-		void	makeSound() const;
-};
+    try {
+        throw GradeTooHighException;
+    } catch （const char *str）{
+        
+    }
+}
