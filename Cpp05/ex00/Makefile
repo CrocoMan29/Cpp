@@ -6,7 +6,7 @@
 #    By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/10 17:50:30 by yismaail          #+#    #+#              #
-#    Updated: 2023/11/10 17:52:19 by yismaail         ###   ########.fr        #
+#    Updated: 2023/11/11 14:13:35 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CPP			=	c++
 
 CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	main.cpp 
+SRCS		=	main.cpp Bureaucrat.cpp 
 
 
 OBJS		= ${SRCS:.cpp=.opp}
