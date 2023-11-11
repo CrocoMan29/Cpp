@@ -6,16 +6,18 @@
 /*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:08:25 by yismaail          #+#    #+#             */
-/*   Updated: 2023/11/11 14:20:54 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/11/11 15:09:23 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string const name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
 {
-    this->_name = name;
-    this->_grade = grade;
+    if (this->_grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    if (this->_grade > 150)
+        throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src)
@@ -30,7 +32,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 {
-    this->_name = rhs._name;
+    // this->_name = rhs._name;
     this->_grade = rhs._grade;
     return *this;
 }
@@ -67,8 +69,8 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
     return "Grade too low";
 }
 
-Bureaucrat std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs)
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs)
 {
-    o << rhs.getname() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
+    o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
     return o;
 }
