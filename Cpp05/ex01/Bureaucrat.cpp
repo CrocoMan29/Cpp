@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:08:25 by yismaail          #+#    #+#             */
-/*   Updated: 2023/11/12 15:46:19 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:32:44 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Bureaucrat::~Bureaucrat()
     std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
-Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs):
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 {
     this->_grade = rhs._grade;
     return *this;
@@ -58,6 +58,18 @@ void Bureaucrat::decrementGrade()
         throw Bureaucrat::GradeTooLowException();
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << this->_name << " signs " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
     return "Grade too high";

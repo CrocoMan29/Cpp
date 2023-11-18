@@ -6,7 +6,7 @@
 #    By: mac <mac@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/10 17:50:30 by yismaail          #+#    #+#              #
-#    Updated: 2023/11/15 12:40:03 by mac              ###   ########.fr        #
+#    Updated: 2023/11/17 18:13:55 by mac              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CPP			=	c++
 
 CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS		=	main.cpp Bureaucrat.cpp AForm.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}

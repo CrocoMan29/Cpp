@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 17:54:19 by yismaail          #+#    #+#             */
-/*   Updated: 2023/11/16 16:23:52 by mac              ###   ########.fr       */
+/*   Created: 2023/11/17 18:21:00 by mac               #+#    #+#             */
+/*   Updated: 2023/11/17 18:31:44 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#pragma once 
 
-int main ()
+#include "AForm.hpp"
+
+class ShrubberyCreationForm: public AForm
 {
-    try
-    {
-        Form f1("form", 1, 1);
-        Form f2("yassir", 2, 3);
-        std::cout << f1 << std::endl;
-        std::cout << f2 << std::endl;
-        f2 = f1;
-        std::cout << f1 << std::endl;
-        std::cout << f2 << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
+    private:
+        std::string _target;
+    public:
+        ShrubberyCreationForm(std::string target);
+        ShrubberyCreationForm(ShrubberyCreationForm const &rfh);
+        ~ShrubberyCreationForm();
+        
 }
