@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 20:39:58 by yismaail          #+#    #+#             */
-/*   Updated: 2023/11/16 16:44:34 by mac              ###   ########.fr       */
+/*   Updated: 2023/11/19 15:52:29 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@ class Form
         int getGradeToSign() const;
         int getGradeToExecute() const;
         void beSigned(Bureaucrat &bureaucrat);
+        class GradeTooHighException : public std::exception
+        {
+            virtual const char* what() const throw():
+        };
+        class GradeTooLowException : public std::exception
+        {
+            virtual const char* what() const throw();
+        };
         
 };
 std::ostream &operator<<(std::ostream &o, Form const &rhs);

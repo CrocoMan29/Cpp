@@ -68,3 +68,13 @@ std::ostream &operator<<(std::ostream &o, AForm const &rhs)
     o << "AForm signed: " << rhs.getSigned() << std::endl;
     return o;
 }
+
+const char *AForm::GradeTooHighException::what() const throw()
+{
+    return "Grade too high";
+}
+
+const char *AForm::GradeTooLowException::what() const throw()
+{
+    return "Grade too low";
+}

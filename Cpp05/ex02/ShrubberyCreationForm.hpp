@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:21:00 by mac               #+#    #+#             */
-/*   Updated: 2023/11/17 18:31:44 by mac              ###   ########.fr       */
+/*   Updated: 2023/11/19 16:12:52 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ class ShrubberyCreationForm: public AForm
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(ShrubberyCreationForm const &rfh);
         ~ShrubberyCreationForm();
-        
+        void execute(Bureaucrat const &executor) const;
 }
