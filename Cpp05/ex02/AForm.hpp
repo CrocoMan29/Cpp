@@ -40,6 +40,10 @@ class AForm
         {
             virtual const char* what() const throw();
         };
+		class BeSignedException : public std::exception
+		{
+			virtual const char* what() const throw();
+		};
         void execute(Bureaucrat const &executor) const = 0;
         
 };

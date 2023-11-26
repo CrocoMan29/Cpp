@@ -13,4 +13,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+	std::ofstream file(this._target + "_shrubbery");
+
+	if (executor.signForm(*this) == false)
+		throw AForm::BeSignedException();
+	if (file.is_open())
+		std::cout << "Ascii tree" << std::endl;
+	else
+
+
 }
