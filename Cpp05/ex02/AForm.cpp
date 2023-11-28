@@ -12,7 +12,12 @@
 
 #include "AForm.hpp"
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute):_name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+AForm::AForm():_name("default"), _signed(false), _gradeToSign(1), _gradeToExecute(1)
+{
+	std::cout << "AForm default constructor called" << std::endl;
+}
+
+AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     if (this->_gradeToSign < 1 || this->_gradeToExecute < 1)
         throw Bureaucrat::GradeTooHighException();

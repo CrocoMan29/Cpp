@@ -17,11 +17,12 @@
 class Bureaucrat;
 class AForm
 {
-    protected:
+    private:
         std::string const _name;
         bool _signed;
         int const _gradeToSign;
         int const _gradeToExecute;
+		AForm();
     public:
         AForm(std::string name, int gradeToSign, int gradeToExecute);
         AForm(AForm const &src);
@@ -44,7 +45,7 @@ class AForm
 		{
 			virtual const char* what() const throw();
 		};
-        void execute(Bureaucrat const &executor) const = 0;
+        virtual void execute(Bureaucrat const &executor) const = 0;
         
 };
 std::ostream &operator<<(std::ostream &o, AForm const &rhs);

@@ -1,10 +1,16 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target):_name("yassir"), _target(target), _gradeToSign(145), _gradeToExecute(137)
+ShrubberyCreationForm::ShrubberyCreationForm():AForm("default", 1, 1)
 {
+
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &rfh): _name(rfh._name), _target(rfh._target), _gradeToSign(rfh._gradeToSign), _gradeToExecute(rfh._gradeToExecute)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target):AForm("yassir", 145, 137), _target(target)
+{
+
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &rfh):AForm(rfh)
 {
     *this = rfh;
 }
@@ -13,13 +19,14 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	std::ofstream file(this._target + "_shrubbery");
-
-	if (executor.signForm(*this) == false)
+	if (executor.signForm(*this) == -1)
 		throw AForm::BeSignedException();
+	if (executor.getGrade() > this->_gradeToExecute)
+		throw AForm::GradeTooLowException();
+	std::ofstream file((this->_target + "_shrubbery").c_str());
 	if (file.is_open())
-		std::cout << "Ascii tree" << std::endl;
+		file << "Ascii tree" << std::endl;
 	else
-
+		std::cerr << "we cannot open this file" << std::endl;
 
 }

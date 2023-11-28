@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:08:25 by yismaail          #+#    #+#             */
-/*   Updated: 2023/11/17 18:08:42 by mac              ###   ########.fr       */
+/*   Updated: 2023/11/28 04:26:42 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat(): _name("default"), _grade(1)
+{
+	// std::cout << "Bureaucrat default constructor called" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
 {
