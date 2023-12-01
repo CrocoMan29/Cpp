@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:54:19 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/01 14:46:37 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:08:09 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
@@ -66,6 +67,35 @@ int	main()
 			bob.signForm(pardon2);
 			pardon2 = pardon;
 			bob.executeForm(pardon2);
+		}
+		catch (std::exception& e)
+		{
+			std::cerr << "Exception caught: " << e.what() << std::endl;
+		}
+	}
+	{
+		std::cout << "\nTEST 4 Intern\n" << std::endl;
+		PresidentialPardonForm* president = new PresidentialPardonForm("new");
+		Intern	someRandomIntern;
+		AForm*	rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		try
+		{
+			Bureaucrat bob("Bob", 150);
+			bob.signForm(*rrf);
+			bob.executeForm(*rrf);
+		}
+		catch (std::exception& e)
+		{
+			std::cerr << "Exception caught: " << e.what() << std::endl;
+		}
+		delete rrf;
+		delete president;
+		try
+		{
+			Bureaucrat* bur = new Bureaucrat("bur", 100);
+			std::cout << *bur << std::endl;
+			delete bur;
 		}
 		catch (std::exception& e)
 		{
