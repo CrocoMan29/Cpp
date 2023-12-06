@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yismaail <yismaail@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 20:39:58 by yismaail          #+#    #+#             */
-/*   Updated: 2023/11/19 15:52:29 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/02 10:03:38 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Form
         void beSigned(Bureaucrat &bureaucrat);
         class GradeTooHighException : public std::exception
         {
-            virtual const char* what() const throw():
+            virtual const char* what() const throw();
         };
         class GradeTooLowException : public std::exception
         {
