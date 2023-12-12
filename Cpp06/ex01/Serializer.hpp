@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 11:27:54 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/09 16:48:25 by yismaail         ###   ########.fr       */
+/*   Created: 2023/12/11 15:54:38 by yismaail          #+#    #+#             */
+/*   Updated: 2023/12/11 16:08:16 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once 
 
-int main (int ac, char **av)
-{
-	if (ac != 2)
-    {
-        std::cerr << "Invalid number of arguments" << std::endl;
-        return 1;
-    }
-    std::string literal = av[1];
-    ScalarConverter::convert(literal);
+#include <iostream>
 
-    return 0;
-}
+class Serializer {
+	private:
+		Serializer();
+	public:
+		Serializer(Serializer const &src);
+		~Serializer();
+		Serializer &operator=(Serializer const &src);
+};

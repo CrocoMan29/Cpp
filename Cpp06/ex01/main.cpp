@@ -5,22 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 11:27:54 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/09 16:48:25 by yismaail         ###   ########.fr       */
+/*   Created: 2023/12/11 16:05:46 by yismaail          #+#    #+#             */
+/*   Updated: 2023/12/11 16:12:36 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main (int ac, char **av)
+int main ()
 {
-	if (ac != 2)
-    {
-        std::cerr << "Invalid number of arguments" << std::endl;
-        return 1;
-    }
-    std::string literal = av[1];
-    ScalarConverter::convert(literal);
-
-    return 0;
+	const char* str = "Yassir ismaaili";
+	uintptr_t ptr = reinterpret_cast<uintptr_t>(str);
+	std::cout << "ptr= " << ptr << std::endl;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:28:40 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/09 16:50:39 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:33:26 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ScalarConverter
 {
 	private:
 	public:
-		ScalarConverter();
+		ScalarConverter(const std::string& str);
 		ScalarConverter(ScalarConverter const &rfh);
 		ScalarConverter &operator=(ScalarConverter const &obj);
 		~ScalarConverter();

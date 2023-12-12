@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 11:28:40 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/09 16:50:39 by yismaail         ###   ########.fr       */
+/*   Created: 2023/12/11 16:13:32 by yismaail          #+#    #+#             */
+/*   Updated: 2023/12/11 16:43:01 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <cctype>
-#include <sstream>
-#include <iomanip>
-#include <limits>
+#include "Serializer.hpp"
+#include "ScalarConverter.hpp"
 
-class ScalarConverter
-{
+class Data {
 	private:
+		char c_type;
+		int  i_type;
+		float f_type;
+		double d_type;
 	public:
-		ScalarConverter();
-		ScalarConverter(ScalarConverter const &rfh);
-		ScalarConverter &operator=(ScalarConverter const &obj);
-		~ScalarConverter();
-		static void convert(const std::string& literal);
+		Data(const std::string& input);
+		char getCtype()const;
+		void setCtype(const char c);
+		int getItype()const;
+		void setItype(const int i);
+		float getFtype()const;
+		void setFtype(const float f);
+		double getDtype()const;
+		void setDtype(const double d);
 };
-
-void checkArg(char *str, int *i, int *c, int *f, int *d);
