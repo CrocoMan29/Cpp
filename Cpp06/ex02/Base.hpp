@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:18:15 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/13 17:29:06 by yismaail         ###   ########.fr       */
+/*   Created: 2023/12/13 18:21:11 by yismaail          #+#    #+#             */
+/*   Updated: 2023/12/13 18:21:30 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#pragma once
 
-class Serializer{
+#include <iostream>
+
+class Base {
 	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
+		virtual ~Base();
 };

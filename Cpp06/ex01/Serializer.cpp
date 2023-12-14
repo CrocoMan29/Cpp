@@ -5,24 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 15:56:27 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/11 15:57:46 by yismaail         ###   ########.fr       */
+/*   Created: 2023/12/13 17:00:26 by yismaail          #+#    #+#             */
+/*   Updated: 2023/12/13 17:27:36 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Data.hpp"
+#include <stdint.h>
 #include "Serializer.hpp"
 
-Serializer::Serializer(){}
-
-Serializer::Serializer(Serializer const &src)
+uintptr_t Serializer::serialize(Data *ptr)
 {
-	(void)src;
+	return reinterpret_cast<uintptr_t>(ptr);
 }
 
-Serializer::~Serializer(){}
-
-Serializer &Serializer::operator=(Serializer const &src)
+Data *Serializer::deserialize(uintptr_t raw)
 {
-	(void)src;
-	return *this;
+	return reinterpret_cast<Data *>(raw);
 }

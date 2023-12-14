@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/10 17:50:30 by yismaail          #+#    #+#              #
-#    Updated: 2023/12/13 17:30:36 by yismaail         ###   ########.fr        #
+#    Created: 2023/12/13 23:13:13 by yismaail          #+#    #+#              #
+#    Updated: 2023/12/13 23:22:25 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CPP			=	c++
 
 CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	main.cpp Data.cpp Serializer.cpp
+SRCS		=	main.cpp Base.cpp A.cpp B.cpp C.cpp generate.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}

@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 11:28:40 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/11 16:33:26 by yismaail         ###   ########.fr       */
+/*   Created: 2023/12/13 18:21:58 by yismaail          #+#    #+#             */
+/*   Updated: 2023/12/13 18:22:24 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <cctype>
-#include <sstream>
-#include <iomanip>
-#include <limits>
+#include "Base.hpp"
 
-class ScalarConverter
-{
-	private:
+class A : public Base {
 	public:
-		ScalarConverter(const std::string& str);
-		ScalarConverter(ScalarConverter const &rfh);
-		ScalarConverter &operator=(ScalarConverter const &obj);
-		~ScalarConverter();
-		static void convert(const std::string& literal);
+		virtual ~A();
 };
-
-void checkArg(char *str, int *i, int *c, int *f, int *d);
