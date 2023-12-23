@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:31:21 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/09 17:28:42 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/14 22:11:34 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &sc)
 
 ScalarConverter::~ScalarConverter() {}
 
-//parse the literal
 static bool nonDisplayable(const std::string& literal)
 {
     for (size_t i = 0; i < literal.length(); i++)
@@ -71,12 +70,10 @@ void ScalarConverter::convert(const std::string& literal)
     {
         std::istringstream iss(literal);
         double d;
-		std::cout << (iss >> d) << std::endl;
         if (!(iss >> d)) {
             std::cerr << "Invalid input" << std::endl;
             return ;
         }
-
         char c = static_cast<char>(d);
         int i = static_cast<int>(d);
         float f = static_cast<float>(d);
@@ -87,11 +84,11 @@ void ScalarConverter::convert(const std::string& literal)
         else std::cout << "Non displayable";
         std::cout << std::endl;
 
-        size_t position = literal.find('.');
-        int precision = (position != std::string::npos) ? literal.length() - position - 2 : 1;
+        // size_t position = literal.find('.');
+        // int precision = (position != std::string::npos) ? literal.length() - position - 2 : 1;
 
         std::cout << "int: " << i << std::endl;
-        std::cout << "float:" << std::fixed << std::setprecision(precision) << f << "f" << std::endl;
-        std::cout << "double:" << std::fixed << std::setprecision(precision) << d << std::endl;
+        std::cout << "float:" << f << "f" << std::endl;
+        std::cout << "double:" << d << std::endl;
     }
 }

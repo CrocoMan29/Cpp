@@ -6,13 +6,13 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 01:23:46 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/14 16:13:26 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/18 00:58:43 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "identify.hpp"
 
-void identify(base *p)
+void identify(Base *p)
 {
 	if (dynamic_cast<A*>(p))
 		std::cout << "A" << std::endl;
@@ -20,15 +20,17 @@ void identify(base *p)
 		std::cout << "B" << std::endl;
 	else if (dynamic_cast<C*>(p))
 		std::cout << "C" << std::endl;
-	std::cout << "Base: un" << std::endl;
+	else
+		std::cout << "Base: unfounded" << std::endl;
 }
 
-void identify(base &p)
+void identify(Base &p)
 {
 	bool check = true;
 	try
 	{
-		(void)dynamic_cast<A*>(p);
+		A &c =  dynamic_cast<A&> (p);
+		(void)c;
 		std::cout << "this is the A class" << std::endl;
 		check = false;
 	}
@@ -37,7 +39,8 @@ void identify(base &p)
 	{
 		try
 		{
-			(void)dynamic_cast<B*>(p);
+			B &a = dynamic_cast<B &> (p);
+			(void)a;
 			std::cout << "this is the B class" << std::endl;
 			check = false;
 		}
@@ -47,14 +50,15 @@ void identify(base &p)
 	{
 		try
 		{
-			(void)dynamic_cast<C*>(p);
+			C &d = dynamic_cast<C&> (p);
+			(void)d;
 			std::cout << "this is the C class" << std::endl;
-			
+			check = false;
 		}
-		catch(const std::exception& e)
+		catch(std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			(void)e;
+			std::cout << "this is not any class of A B C" << std::endl;
 		}
-		
 	}
 }
