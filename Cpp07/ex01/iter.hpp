@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 02:59:59 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/23 14:53:53 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/24 09:07:26 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,4 @@ void iter(T *arr, size_t lenght, func f){
 	{
 		f(arr[i]);
 	}
-}
-
-template<typename T>
-void print(T &element){
-	std::cout << element << std::endl;
 }
