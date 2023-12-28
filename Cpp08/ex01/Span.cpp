@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 16:29:39 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/26 21:12:07 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:10:39 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 // Span::Span():_n(0), _v(0)
 // {}
 
-Span::Span(size_t n):_v(n)
+Span::Span(int n)
 {
 	this->_n = n;
-	
+	this->_v.reserve(n);	
 }
 
-Span::Span(const Span &obj) 
+Span::Span(const Span &obj)
 {
 	this->_v.clear();
 	this->_n = obj.getN();
@@ -45,35 +45,39 @@ Span::~Span()
 
 void Span::addNumber(int num)
 {
-	if (this->_v)
+	if (num < 0)
+		throw Span::negativeIntException();
 	this->_v.push_back(num);
-	printv(getVector());
 }
 
-size_t Span::shortestSpan()
+int Span::shortestSpan()
 {
-	std::sort(this->_v.begin(), this->_v.end());
-	// printv(this->_v);
-	std::vector<int>::iterator first = this->_v.begin();
-	std::vector<int>::iterator second = this->_v.begin() + 1;
-	size_t num = *(second) - *(first); 
+	if (this->_v.size() < 2)
+		throw std::logic_error("we need at least two element to calcule shortest span");
+	std::vector<int> temp = this->_v;
+	std::sort(temp.begin(), temp.end());
+	std::vector<int> diff(this->_v.size());
+	std::adjacent_difference(temp.begin(), temp.end(), diff.begin());
+	int num = *std::min_element(diff.begin() + 1, diff.end());
 	return (num);
 }
 
-size_t Span::largestSpan()
+int Span::largestSpan()
 {
-	std::sort(this->_v.begin(), this->_v.end());
-	std::vector<int>::iterator last = this->_v.end() - 1;
-	std::vector<int>::iterator pre_last = this->_v.end() - 2;
-	return (*(last) - *(pre_last));
+	if (this->_v.size() < 2)
+		throw std::logic_error("Vector needs at least two elements for a largest span");
+	std::vector<int> temp = this->_v;
+	std::sort(temp.begin(), temp.end());
+	int num = temp.back() - temp.front();
+	return (num);
 }
 
-const size_t &Span::getN() const
+const int &Span::getN() const
 {
 	return this->_n;
 }
 
-void Span::setN(const size_t &n)
+void Span::setN(const int &n)
 {
 	this->_n = n;
 }
@@ -95,4 +99,12 @@ std::vector<int> Span::getVector()
 	return this->_v;
 }
 
+const char * Span::negativeIntException::what() const throw()
+{
+	return "we don't use negative int";
+}
 
+const char *Span::negativeSizeException::what() const throw()
+{
+	return "we cannot use negative size in vector";
+}
