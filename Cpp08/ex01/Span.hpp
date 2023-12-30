@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 15:17:59 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/28 17:09:36 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:24:24 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Span {
 	private:
 		int _n;
 		std::vector<int>_v;
+		Span();
 	public:
-		// Span();
 		Span(int n);
 		Span(const Span& obj);
 		Span &operator=(const Span& obj);

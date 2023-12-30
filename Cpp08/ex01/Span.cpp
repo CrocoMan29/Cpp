@@ -6,19 +6,21 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 16:29:39 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/28 17:10:39 by yismaail         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:24:30 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-// Span::Span():_n(0), _v(0)
-// {}
+Span::Span():_n(0), _v(0)
+{}
 
 Span::Span(int n)
 {
+	if (n < 0)
+		Span::negativeSizeException();
 	this->_n = n;
-	this->_v.reserve(n);	
+	this->_v.reserve(n);
 }
 
 Span::Span(const Span &obj)
@@ -59,6 +61,8 @@ int Span::shortestSpan()
 	std::vector<int> diff(this->_v.size());
 	std::adjacent_difference(temp.begin(), temp.end(), diff.begin());
 	int num = *std::min_element(diff.begin() + 1, diff.end());
+	if (num < 0)
+		Span::negativeIntException();
 	return (num);
 }
 
@@ -69,6 +73,8 @@ int Span::largestSpan()
 	std::vector<int> temp = this->_v;
 	std::sort(temp.begin(), temp.end());
 	int num = temp.back() - temp.front();
+	if (num < 0)
+		Span::negativeIntException();
 	return (num);
 }
 
@@ -81,8 +87,6 @@ void Span::setN(const int &n)
 {
 	this->_n = n;
 }
-
-
 
 void Span::printv(std::vector<int>v)
 {
