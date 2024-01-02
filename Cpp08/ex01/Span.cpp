@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 16:29:39 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/28 21:24:30 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/01 23:27:00 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Span::Span():_n(0), _v(0)
 Span::Span(int n)
 {
 	if (n < 0)
-		Span::negativeSizeException();
+		throw Span::negativeSizeException();
 	this->_n = n;
 	this->_v.reserve(n);
 }
@@ -62,7 +62,7 @@ int Span::shortestSpan()
 	std::adjacent_difference(temp.begin(), temp.end(), diff.begin());
 	int num = *std::min_element(diff.begin() + 1, diff.end());
 	if (num < 0)
-		Span::negativeIntException();
+		throw Span::negativeIntException();
 	return (num);
 }
 
@@ -74,7 +74,7 @@ int Span::largestSpan()
 	std::sort(temp.begin(), temp.end());
 	int num = temp.back() - temp.front();
 	if (num < 0)
-		Span::negativeIntException();
+		throw Span::negativeIntException();
 	return (num);
 }
 

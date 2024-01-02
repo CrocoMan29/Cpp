@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 15:17:45 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/28 13:42:58 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/01 23:28:05 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int main ()
 {
 	try
 	{
-		Span sp(-5);
+		Span sp(5);
 		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-		sp.addNumber(-33);
+		sp.addNumber(33);
 		sp.printv(sp.getVector());
 		// sp.printv(sp.getVector());
 		std::cout << sp.shortestSpan() << std::endl;
