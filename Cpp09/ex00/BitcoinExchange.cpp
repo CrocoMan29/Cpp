@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 16:36:43 by yismaail          #+#    #+#             */
-/*   Updated: 2024/01/08 03:31:33 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:58:02 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,7 @@ BitcoinExchange::~BitcoinExchange(){}
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &obj)
 {
 	if (this != &obj)
-	{
 		this->data = obj.data;
-	}
 	return (*this);
 }
 
@@ -159,11 +157,13 @@ void BitcoinExchange::handleInput(const char *filename)
 void BitcoinExchange::printResult(const std::string &line)
 {
 	std::string date;
+	std::string str;
 	float val;
 	float result;
 
 	date = line.substr(0, 10);
-	std::stringstream ss(date);
+	str = line.substr(13);
+	std::stringstream ss(str);
 	ss >> val;
 	result = val * findVal(findDate(date));
 	std::cout << date << " => " << val << " = " << result << '\n';
