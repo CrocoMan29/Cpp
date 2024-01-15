@@ -6,16 +6,16 @@
 #    By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 17:04:11 by yismaail          #+#    #+#              #
-#    Updated: 2024/01/09 17:04:57 by yismaail         ###   ########.fr        #
+#    Updated: 2024/01/12 19:38:05 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	RPN
 CPP			=	c++
 
-CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
+CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 RM			=	rm -rf
-SRCS		=	main.cpp 
+SRCS		=	main.cpp RPN.cpp
 
 
 OBJS		= ${SRCS:.cpp=.opp}

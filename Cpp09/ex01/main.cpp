@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:05:08 by yismaail          #+#    #+#             */
-/*   Updated: 2024/01/09 18:07:32 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/12 19:04:00 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main(int ac, char **av)
 	RPN oper;
 	try
 	{
-		oper.run(av);
+		oper.checkInput(av[1]);
+		oper.run(av[1]);
 	}
 	catch(const std::exception& e)
 	{
