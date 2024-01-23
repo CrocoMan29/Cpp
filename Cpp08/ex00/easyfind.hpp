@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 10:18:40 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/26 11:15:43 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:23:09 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,8 @@
 
 template<typename T>
 int easyfind(T& container, int tofind)
-{
-	typename T::reverse_iterator it = std::find(container.rbegin(), container.rend(), tofind);
-	
-	if (it != container.rbegin())
-		return (*it);
-	else
+{	
+	if (std::find(container.begin(), container.end(), tofind) == container.end())
 		throw std::runtime_error("element not found");
+	return(tofind);
 }

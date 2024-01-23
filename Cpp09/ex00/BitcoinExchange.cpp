@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 16:36:43 by yismaail          #+#    #+#             */
-/*   Updated: 2024/01/08 16:58:02 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/20 12:39:09 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,8 +137,6 @@ void BitcoinExchange::handleInput(const char *filename)
 		throw std::runtime_error("Error: headr of csv file is not valid");
 	while (std::getline(input, line))
 	{
-		if (line.length() < 14 || line[11] != '|' || line[10] != ' ' || line[12] != ' ' )
-			throw std::runtime_error("Error: input line has wrong format");
 		if (!checkDate(line.substr(0, 10)))
 		{
 			std::cerr << "Error: bad input => " << line.substr(0, 10) << '\n';

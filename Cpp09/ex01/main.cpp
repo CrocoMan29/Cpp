@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:05:08 by yismaail          #+#    #+#             */
-/*   Updated: 2024/01/12 19:04:00 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/20 13:28:19 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int main(int ac, char **av)
 {
-	if (ac == 1)
+	if (ac != 2)
 	{
 		std::cout << "ERROR" << std::endl;
+		return (1);
 	}
 	RPN oper;
 	try
@@ -28,5 +29,4 @@ int main(int ac, char **av)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
 }

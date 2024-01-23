@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 15:17:59 by yismaail          #+#    #+#             */
-/*   Updated: 2023/12/28 21:24:24 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:10:49 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,16 @@ class Span {
 		Span &operator=(const Span& obj);
 		~Span();
 		void addNumber(int num);
+		template < typename Container >
+		void fillNumbers(const typename Container::iterator &begin, const typename Container::iterator &end){
+			for (typename Container::iterator i = begin; i != end; i++)
+			{
+				this->addNumber(*i);
+			}
+		}
+		void addRangeOfNum();
 		int shortestSpan();
-		int largestSpan();
+		int longestSpan();
 		const int &getN() const;
 		void setN(const int &n);
 		void printv(std::vector<int>v);

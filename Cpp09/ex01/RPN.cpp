@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:53:43 by yismaail          #+#    #+#             */
-/*   Updated: 2024/01/12 19:49:01 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/20 13:25:39 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,12 @@ void RPN::checkInput(const char *av)
 		throw std::runtime_error("ERROR: invalid character");
 	char* str = strdup(av);
     char* token = std::strtok(str, " ");
-	// bool lastWasOperator = false;
     while (token != NULL) {
 		std::string s = token;
 		if (s.size() != 1)
 		{
-			std::cout << "size of " << s  << ": "<< s.size() << std::endl;
 			throw std::runtime_error("error: size");
 		}
-		// if (s == "+" || s == "-" || s == "*" || s == "/"){
-		// 	if (lastWasOperator)
-		// 		throw std::runtime_error("error: two operators in a row");
-		// 	lastWasOperator = true;
-		// } else
-		// 	lastWasOperator = false;
-        // std::cout << token << '\n';
         token = std::strtok(NULL, " ");
     }
     free(str); 

@@ -6,7 +6,7 @@
 /*   By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 16:29:39 by yismaail          #+#    #+#             */
-/*   Updated: 2024/01/01 23:27:00 by yismaail         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:11:15 by yismaail         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Span::Span(int n)
 {
 	if (n < 0)
 		throw Span::negativeSizeException();
+	if (n > 10000)
+		throw std::logic_error("too much for size");
 	this->_n = n;
 	this->_v.reserve(n);
 }
@@ -49,7 +51,24 @@ void Span::addNumber(int num)
 {
 	if (num < 0)
 		throw Span::negativeIntException();
-	this->_v.push_back(num);
+	if(this->_v.size() < static_cast<unsigned int>(this->_n))
+		this->_v.push_back(num);
+	else
+		throw std::logic_error("we can't add anything");
+		
+}
+
+void Span::addRangeOfNum()
+{
+	std::vector<int>    vec;
+        Span    spanVec(this->_n);
+		srand(time(0));
+        for (int i = 0; i < this->_n; i++)
+            vec.push_back(rand() % 9999);
+        spanVec.fillNumbers<std::vector <int> >(vec.begin(), vec.end());
+
+        std::cout << "Shortest span: " << spanVec.shortestSpan() << std::endl;
+        std::cout << "Longest span: " << spanVec.longestSpan() << std::endl;
 }
 
 int Span::shortestSpan()
@@ -66,7 +85,7 @@ int Span::shortestSpan()
 	return (num);
 }
 
-int Span::largestSpan()
+int Span::longestSpan()
 {
 	if (this->_v.size() < 2)
 		throw std::logic_error("Vector needs at least two elements for a largest span");

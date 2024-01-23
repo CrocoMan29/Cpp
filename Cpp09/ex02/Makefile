@@ -6,14 +6,14 @@
 #    By: yismaail <yassirismaaili8@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 01:55:44 by yismaail          #+#    #+#              #
-#    Updated: 2024/01/17 01:56:27 by yismaail         ###   ########.fr        #
+#    Updated: 2024/01/20 16:57:46 by yismaail         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	pmergeme
 CPP			=	c++
 
-CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CPPFLAGS		=	-Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 RM			=	rm -rf
 SRCS		=	main.cpp PmergeMe.cpp
 
